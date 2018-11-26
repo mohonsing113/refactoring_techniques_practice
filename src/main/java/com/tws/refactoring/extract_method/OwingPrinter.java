@@ -1,18 +1,18 @@
 package com.tws.refactoring.extract_method;
 
-import java.util.Enumeration;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
 
 public class OwingPrinter {
     void printOwing(String name, List<Order> orders) {
         Iterator<Order> elements = orders.iterator();
         printBanner();
-
         double outstanding = getOutstanding(elements);
+        printDetail(name, outstanding);
 
-        // print details
+    }
+
+    private void printDetail(String name, double outstanding) {
         System.out.println("name: " + name);
         System.out.println("amount: " + outstanding);
     }
